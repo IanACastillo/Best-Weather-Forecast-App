@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A57BEED2A9AD9EE00540A53 /* ModelRealTimeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A57BEEC2A9AD9EE00540A53 /* ModelRealTimeWeather.swift */; };
 		6A57BEEF2A9ADA5100540A53 /* ModelForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A57BEEE2A9ADA5100540A53 /* ModelForecast.swift */; };
+		6A57BEF22A9ADCCC00540A53 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A57BEF12A9ADCCC00540A53 /* WeatherService.swift */; };
 		6AF1CBEA2A992614008D6767 /* Best_Weather_Forecast_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF1CBE92A992614008D6767 /* Best_Weather_Forecast_AppApp.swift */; };
 		6AF1CBEC2A992614008D6767 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF1CBEB2A992614008D6767 /* ContentView.swift */; };
 		6AF1CBEE2A992616008D6767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF1CBED2A992616008D6767 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		6A57BEEC2A9AD9EE00540A53 /* ModelRealTimeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRealTimeWeather.swift; sourceTree = "<group>"; };
 		6A57BEEE2A9ADA5100540A53 /* ModelForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForecast.swift; sourceTree = "<group>"; };
+		6A57BEF12A9ADCCC00540A53 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6AF1CBE62A992614008D6767 /* Best Weather Forecast App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Weather Forecast App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF1CBE92A992614008D6767 /* Best_Weather_Forecast_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Best_Weather_Forecast_AppApp.swift; sourceTree = "<group>"; };
 		6AF1CBEB2A992614008D6767 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6A57BEF32A9ADCEF00540A53 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6A57BEF12A9ADCCC00540A53 /* WeatherService.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		6AF1CBDD2A992614008D6767 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		6AF1CBE82A992614008D6767 /* Best Weather Forecast App */ = {
 			isa = PBXGroup;
 			children = (
+				6A57BEF32A9ADCEF00540A53 /* NetworkLayer */,
 				6A57BEF02A9ADAB800540A53 /* Model */,
 				6AF1CBE92A992614008D6767 /* Best_Weather_Forecast_AppApp.swift */,
 				6AF1CBEB2A992614008D6767 /* ContentView.swift */,
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A57BEF22A9ADCCC00540A53 /* WeatherService.swift in Sources */,
 				6AF1CBEC2A992614008D6767 /* ContentView.swift in Sources */,
 				6A57BEED2A9AD9EE00540A53 /* ModelRealTimeWeather.swift in Sources */,
 				6A57BEEF2A9ADA5100540A53 /* ModelForecast.swift in Sources */,

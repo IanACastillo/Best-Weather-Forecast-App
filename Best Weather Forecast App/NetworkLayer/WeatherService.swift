@@ -44,8 +44,6 @@ class WeatherService {
     private func fetch<T: Decodable>(forCity city: String, endpoint: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
         let urlString = "\(baseURL)\(endpoint)?key=\(apiKey)&q=\(city)&days=5"
         
-        print("This is the url fetch \(urlString)")
-        
         guard let url = URL(string: urlString) else {
             completion(.failure(.urlError))
             return

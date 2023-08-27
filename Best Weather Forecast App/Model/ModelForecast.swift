@@ -11,16 +11,19 @@ struct ForecastResponse: Codable {
     let forecastday: [ForecastDay]
 }
 
-struct ForecastDay: Codable {
+struct ForecastDay: Codable, Identifiable {
+    var id: String { date }
     let date: String
     let day: DayElement
     let astro: AstroElement
     let hour: [HourElement]
 }
 
+
 struct DayElement: Codable {
     let maxtemp_c: Decimal
     let mintemp_c: Decimal
+    let condition: WeatherCondition
 }
 
 struct AstroElement: Codable {

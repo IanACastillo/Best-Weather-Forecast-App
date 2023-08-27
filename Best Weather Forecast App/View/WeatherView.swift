@@ -29,7 +29,7 @@ struct WeatherCardView: View {
 
                     // Retry button
                     Button(action: {
-                        viewModel.fetchWeatherData(forCity: "YOUR_CITY_NAME")
+                        viewModel.fetchWeatherData(forCity: "Seattle")
                     }) {
                         Text("Retry")
                             .padding()
@@ -52,7 +52,7 @@ struct WeatherCardView: View {
             }
         }
         .onAppear {
-            viewModel.fetchWeatherData(forCity: "YOUR_CITY_NAME")
+            viewModel.fetchWeatherData(forCity: "Seattle")
         }
         .padding()
     }

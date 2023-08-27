@@ -7,8 +7,14 @@
 
 import Foundation
 
+struct ForecastAPIResponse: Codable {
+    let forecast: ForecastResponse
+}
+
 struct ForecastResponse: Codable {
-    let forecastday: [ForecastDay]
+    let location: Location
+    let current: RealtimeWeather
+    let forecast: Forecast
 }
 
 struct ForecastDay: Codable, Identifiable {
@@ -18,7 +24,6 @@ struct ForecastDay: Codable, Identifiable {
     let astro: AstroElement
     let hour: [HourElement]
 }
-
 
 struct DayElement: Codable {
     let maxtemp_c: Decimal
@@ -36,3 +41,25 @@ struct HourElement: Codable {
     let temp_c: Decimal
     let condition: WeatherCondition
 }
+
+struct WeatherApiResponse: Codable {
+    let location: Location
+    let current: RealtimeWeather
+}
+
+struct Location: Codable {
+    let name: String
+    let region: String
+    let country: String
+    let lat: Double
+    let lon: Double
+    let tz_id: String
+    let localtime_epoch: Int
+    let localtime: String
+}
+
+struct Forecast: Codable {
+    let forecastday: [ForecastDay]
+}
+
+

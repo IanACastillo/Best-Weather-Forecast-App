@@ -17,32 +17,38 @@ class WeatherViewModel: ObservableObject {
 
     func fetchWeatherData(forCity city: String) {
         isLoading = true
+        
+        let dispatchGroup = DispatchGroup()
+
+        dispatchGroup.enter()
         weatherService.fetchRealtimeWeather(forCity: city) { [weak self] result in
-            switch result {
-            case .success(let weather):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let weather):
                     self?.realtimeWeather = weather
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
+                case .failure(let error):
                     self?.error = error
                 }
+                dispatchGroup.leave()
             }
+        }
 
-            self?.weatherService.fetchForecast(forCity: city) { [weak self] result in
+        dispatchGroup.enter()
+        weatherService.fetchForecast(forCity: city) { [weak self] result in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let forecastResponse):
-                    DispatchQueue.main.async {
-                        self?.forecast = forecastResponse.forecastday
-                        self?.isLoading = false
-                    }
+                    self?.forecast = forecastResponse.forecast.forecastday
                 case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.error = error
-                        self?.isLoading = false
-                    }
+                    self?.error = error
                 }
+                dispatchGroup.leave()
             }
+        }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.isLoading = false
         }
     }
 }
+

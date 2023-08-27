@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RealtimeWeatherResponse: Codable {
+    let current: RealtimeWeather
+}
+
 struct RealtimeWeather: Codable {
     let last_updated: String
     let temp_c: Decimal

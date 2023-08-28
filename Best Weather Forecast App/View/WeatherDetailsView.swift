@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct WeatherDetailsView: View {
-    var realtimeWeather: RealtimeWeather?
-    var forecast: [ForecastDay]
+    @ObservedObject var viewModel: WeatherViewModel // 1. Add the ViewModel as an ObservedObject
     let gradient = Gradient(colors: [Color.blue.opacity(0.7), Color.blue])
 
     var body: some View {
         ScrollView {
-            if let weather = realtimeWeather {
+            if let weather = viewModel.realtimeWeather { // Use viewModel.realtimeWeather
                 VStack(spacing: 20) {
                     // Real-time weather details
                     HStack {
@@ -43,7 +42,7 @@ struct WeatherDetailsView: View {
                     .padding(.horizontal)
 
                     // Display the forecast
-                    ForEach(forecast, id: \.date) { day in
+                    ForEach(viewModel.forecast, id: \.date) { day in // Use viewModel.forecast
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(day.date)
@@ -73,12 +72,11 @@ struct WeatherDetailsView: View {
                 .background(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
                 .cornerRadius(15)
                 .padding()
-            } else {
-                Text("No weather data available")
-                    .font(.title2)
-                    .padding()
-            }
+            } 
         }
         .background(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all))
+        .refreshable { // 2. Add the refreshable modifier
+            viewModel.refreshData()
+        }
     }
 }

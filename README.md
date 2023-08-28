@@ -23,8 +23,8 @@ Press the play button (or Cmd + R) in Xcode to build and run the app.
 
 ![Simulator Screenshot - iPhone 14 - 2023-08-28 at 11 55 44](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/fbecd357-d135-4d27-a720-1a9be240865c)
 
+![Simulator Screenshot - iPhone 14 - 2023-08-28 at 16 54 58](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/55f0d5fd-3a73-45fa-be45-892a48dfaa0b)
 
-![Simulator Screenshot - iPhone 14 - 2023-08-28 at 11 55 51](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/f116d7bf-1f50-41b2-8c54-ae3ee34f5a48)
 
 
 ## Design Decisions

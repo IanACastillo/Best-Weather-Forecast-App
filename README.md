@@ -20,6 +20,8 @@ Navigate to the cloned directory and open the .xcodeproj or .xcworkspace file.
 Choose your desired simulator or connect an iOS device.
 Press the play button (or Cmd + R) in Xcode to build and run the app.
 
+<img width="401" alt="Screenshot 2023-08-28 at 11 45 29" src="https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/8f76161c-ad80-45ae-aaa2-38bc3f45a07e">
+
 ## Design Decisions
 
 MVVM Architecture: The app utilizes the MVVM (Model-View-ViewModel) architecture. This helps in keeping the UI code separated from the business logic, ensuring clean and maintainable code.

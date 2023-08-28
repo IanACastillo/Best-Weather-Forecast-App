@@ -37,7 +37,7 @@ struct WeatherDetailsView: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.white)
-                                    .frame(width: 130, height: 130)
+                                    .frame(width: 115, height: 115)
                             )
                     }
                     .padding(.horizontal)

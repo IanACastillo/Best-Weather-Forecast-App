@@ -19,16 +19,19 @@ struct ContentView: View {
                 if !searchText.isEmpty {
                     Button(action: {
                         // Here we encode the city name and then send it to the viewModel to fetch data
-                        let encodedCity = encodeCityName(cityName: searchText)
+                        let encodedCity = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? searchText
                         viewModel.fetchWeatherData(forCity: encodedCity)
                     }) {
                         Text("Search")
                     }
                 }
                 
-                // Passing viewModel directly instead of individual properties
-                WeatherDetailsView(viewModel: viewModel)
-                Spacer() // To make sure other elements stay on top
+                if let realtimeWeather = viewModel.realtimeWeather {
+                    WeatherDetailsView(realtimeWeather: realtimeWeather, forecast: viewModel.forecast)
+                } else {
+                    Spacer() // This will center the search bar and button at the top when no data is present
+                }
+                
             }
             .padding(.top, 20)
             .navigationBarTitle("Weather")

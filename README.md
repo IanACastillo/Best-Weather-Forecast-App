@@ -20,8 +20,9 @@ Navigate to the cloned directory and open the .xcodeproj or .xcworkspace file.
 Choose your desired simulator or connect an iOS device.
 Press the play button (or Cmd + R) in Xcode to build and run the app.
 
-![Simulator Screenshot - iPhone 14 - 2023-08-28 at 11 48 46](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/1177d2eb-030a-48c0-897a-6c96c6c7bc8b)
 ![Simulator Screenshot - iPhone 14 - 2023-08-28 at 11 49 03](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/47c7fc8a-f28a-4959-8eff-29bad2312645)
+
+
 ![Simulator Screenshot - iPhone 14 - 2023-08-28 at 11 49 13](https://github.com/IanACastillo/Best-Weather-Forecast-App/assets/138615251/05568b81-08ab-437f-b22b-a45d6701c3a7)
 
 

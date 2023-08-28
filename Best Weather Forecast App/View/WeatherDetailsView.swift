@@ -30,11 +30,12 @@ struct WeatherDetailsView: View {
 
                         Spacer()
 
-                        AsyncImage(url: weather.condition.icon)
+                        // Bigger weather icon
+                        AsyncImage(url: "https:\(weather.condition.icon)")
                             .scaledToFit()
                             .frame(width: 120, height: 120)
                             .background(
-                                RoundedRectangle(cornerRadius: 15)
+                                RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.white)
                                     .frame(width: 130, height: 130)
                             )
@@ -55,9 +56,9 @@ struct WeatherDetailsView: View {
 
                             Spacer()
 
-                            AsyncImage(url: day.day.condition.icon)
+                            AsyncImage(url: "https:\(day.day.condition.icon)")
                                 .scaledToFit()
-                                .frame(width: 60, height: 60)
+                                .frame(width: 80, height: 80)
                         }
                         .padding(.vertical, 10)
                         .padding(.horizontal)

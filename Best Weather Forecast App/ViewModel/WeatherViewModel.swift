@@ -12,11 +12,15 @@ class WeatherViewModel: ObservableObject {
     @Published var forecast: [ForecastDay] = []
     @Published var isLoading = false
     @Published var error: NetworkError?
+    
+    // Store the last searched city to refresh the data.
+    private var lastQueriedCity: String?
 
     private var weatherService = WeatherService()
 
     func fetchWeatherData(forCity city: String) {
         isLoading = true
+        lastQueriedCity = city // Store the city
         
         let dispatchGroup = DispatchGroup()
 
@@ -48,6 +52,13 @@ class WeatherViewModel: ObservableObject {
         
         dispatchGroup.notify(queue: .main) { [weak self] in
             self?.isLoading = false
+        }
+    }
+    
+    // A function to refresh the data.
+    func refreshData() {
+        if let city = lastQueriedCity {
+            fetchWeatherData(forCity: city)
         }
     }
 }

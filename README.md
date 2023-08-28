@@ -1,6 +1,7 @@
 # Best Weather Forecast App
 
-Welcome to the Best Weather Forecast App! This app is built using SwiftUI and allows users to search for weather conditions in cities across the globe. Below you'll find instructions on how to run the app, an overview of design decisions, and a few challenges faced during the development.
+Welcome to the Best Weather Forecast App! This app is built using SwiftUI and allows users to search for weather conditions in cities across the globe.
+Below you'll find instructions on how to run the app, an overview of design decisions, and a few challenges faced during the development.
 
 How to Run the App
 

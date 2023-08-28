@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText: String = ""
     @ObservedObject var viewModel = WeatherViewModel()
-
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
@@ -18,7 +18,9 @@ struct ContentView: View {
                 
                 if !searchText.isEmpty {
                     Button(action: {
-                        viewModel.fetchWeatherData(forCity: searchText)
+                        // Here we encode the city name and then send it to the viewModel to fetch data
+                        let encodedCity = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? searchText
+                        viewModel.fetchWeatherData(forCity: encodedCity)
                     }) {
                         Text("Search")
                     }
@@ -35,4 +37,8 @@ struct ContentView: View {
             .navigationBarTitle("Weather")
         }
     }
+}
+
+func encodeCityName(cityName: String) -> String {
+    return cityName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? cityName
 }

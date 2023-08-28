@@ -14,16 +14,25 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             TextField("Search for a city...", text: $text)
-                .padding(7)
+                .padding(10)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
-                .cornerRadius(8)
+                .cornerRadius(10)
                 .overlay(
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
+                        Spacer()
+                        if isEditing {
+                            Button(action: {
+                                self.text = ""
+                            }) {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                                    .padding(.trailing, 8)
+                            }
+                        }
                     }
                 )
                 .onTapGesture {
@@ -37,10 +46,11 @@ struct SearchBar: View {
                 }) {
                     Text("Cancel")
                 }
-                .padding(.trailing, 8)
+                .padding(.horizontal, 10)
                 .transition(.move(edge: .trailing))
-                .animation(.default, value: 1)
+                .animation(.easeInOut, value: 4)
             }
         }
+        .padding(.horizontal)
     }
 }
